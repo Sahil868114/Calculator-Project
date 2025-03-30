@@ -9,6 +9,9 @@ Array.from(buttons).forEach((button)=> {
         else if(e.target.innerHTML == 'C'){
             string = "";
             document.querySelector('input').value = string;
+        } else if (e.target.innerHTML == 'D') {
+            string = string.slice(0, -1); // Delete the last character
+            document.querySelector('input').value = string;
         }
         else{
         console.log(e.target)
