@@ -3,49 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculate me! - a calculater made by me</title>
+    <meta name="description" content="A modern, responsive calculator with advanced features">
+    <meta name="theme-color" content="#1e1e2e">
+    <title>Calculate Me! - Modern Calculator</title>
     <link href="style.css" rel="stylesheet" type="text/css"/>
     <link href="utils.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-    <h1 class="text-center">Welcome to Calculate me!</h1>
-    <main class="container flex flex-col items-center mx-auto m-w-20">
-      <section class="Calculator">
-        <div class="row">
-            <input class="input" type="text" />
-        </div>
-        <div class="row">
-            <button class="button" aria-label="Clear">C</button>
-            <button class="button" aria-label="Delete">D</button>
-            <button class="button" aria-label="Divide">/</button>
-            <button class="button" aria-label="Exponent">^</button>
-        </div>
-        <div class="row">
-            <button class="button" aria-label="Seven">7</button>
-            <button class="button" aria-label="Eight">8</button>
-            <button class="button" aria-label="Nine">9</button>
-            <button class="button" aria-label="Multiply">*</button>
-        </div>
-        <div class="row">
-            <button class="button" aria-label="Four">4</button>
-            <button class="button" aria-label="Five">5</button>
-            <button class="button" aria-label="Six">6</button>
-            <button class="button" aria-label="Subtract">-</button>
-        </div>
-        <div class="row">
-            <button class="button" aria-label="One">1</button>
-            <button class="button" aria-label="Two">2</button>
-            <button class="button" aria-label="Three">3</button>
-            <button class="button" aria-label="Add">+</button>
-        </div>
-        <div class="row">
-            <button class="button" aria-label="Percentage">%</button>
-            <button class="button" aria-label="Zero">0</button>
-            <button class="button" aria-label="Decimal">.</button>
-            <button class="button" aria-label="Equals">=</button>
-        </div>
-      </section>
-    </main>
+    <div class="app-wrapper">
+        <header class="app-header">
+            <h1>Calculate Me!</h1>
+            <button class="theme-toggle" aria-label="Toggle Dark/Light Mode" title="Toggle theme (T)">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </header>
+
+        <main class="container">
+            <section class="calculator">
+                <div class="display-section">
+                    <input class="display" type="text" placeholder="0" readonly />
+                </div>
+
+                <div class="history-section">
+                    <button class="history-toggle" aria-label="Toggle History">History ↓</button>
+                    <div class="history-list" id="historyList"></div>
+                </div>
+
+                <div class="button-grid">
+                    <button class="btn btn-function" data-action="clear">C</button>
+                    <button class="btn btn-function" data-action="delete">⌫</button>
+                    <button class="btn btn-function" data-action="percent">%</button>
+                    <button class="btn btn-operator" data-operator="/">÷</button>
+
+                    <button class="btn" data-value="7">7</button>
+                    <button class="btn" data-value="8">8</button>
+                    <button class="btn" data-value="9">9</button>
+                    <button class="btn btn-operator" data-operator="*">×</button>
+
+                    <button class="btn" data-value="4">4</button>
+                    <button class="btn" data-value="5">5</button>
+                    <button class="btn" data-value="6">6</button>
+                    <button class="btn btn-operator" data-operator="-">−</button>
+
+                    <button class="btn" data-value="1">1</button>
+                    <button class="btn" data-value="2">2</button>
+                    <button class="btn" data-value="3">3</button>
+                    <button class="btn btn-operator" data-operator="+">+</button>
+
+                    <button class="btn btn-decimal" data-value=".">.</button>
+                    <button class="btn btn-zero" data-value="0">0</button>
+                    <button class="btn btn-equals" data-action="equals">=</button>
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h3>Keyboard Shortcuts</h3>
+                <ul>
+                    <li><kbd>Enter</kbd> or <kbd>=</kbd> - Calculate</li>
+                    <li><kbd>Backspace</kbd> - Delete last digit</li>
+                    <li><kbd>C</kbd> - Clear all</li>
+                    <li><kbd>T</kbd> - Toggle theme</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>Made with ❤️ for fast calculations</p>
+        </footer>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
